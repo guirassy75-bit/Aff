@@ -47,7 +47,7 @@ input:focus,select:focus{outline:none;border-color:var(--navy)}
 .empty-checkout{background:#fff;border-radius:var(--radius);padding:3rem;text-align:center;grid-column:1/-1}
 </style></head><body>
 <nav>
-  <a href="index.html" class="logo">La Centrale Des<span> Affaires</span></a>
+  <a href="../index.html" class="logo">La Centrale Des<span> Affaires</span></a>
   <a href="panier.html" style="text-decoration:none;color:var(--navy);font-weight:600;border:1px solid var(--border);padding:.5rem 1rem;border-radius:8px">🛒 Panier</a>
 </nav>
 
@@ -124,7 +124,7 @@ function renderItems(){
   const wrap = document.getElementById('sum-items');
   const area = document.getElementById('checkout-area');
   if(c.length===0){
-    area.innerHTML='<div class="empty-checkout"><p style="font-size:3rem;margin-bottom:.5rem">🛒</p><h2 style="font-family:Syne,sans-serif;margin-bottom:.5rem">Votre panier est vide</h2><p style="color:#6b7280;margin-bottom:1.5rem">Ajoutez des produits avant de commander.</p><a href="index.html#produits" style="background:#e7cb2f;color:#180595;padding:.8rem 1.6rem;border-radius:8px;text-decoration:none;font-weight:700">Voir le catalogue</a></div>';
+    area.innerHTML='<div class="empty-checkout"><p style="font-size:3rem;margin-bottom:.5rem">🛒</p><h2 style="font-family:Syne,sans-serif;margin-bottom:.5rem">Votre panier est vide</h2><p style="color:#6b7280;margin-bottom:1.5rem">Ajoutez des produits avant de commander.</p><a href="../index.html#produits" style="background:#e7cb2f;color:#180595;padding:.8rem 1.6rem;border-radius:8px;text-decoration:none;font-weight:700">Voir le catalogue</a></div>';
     return;
   }
   wrap.innerHTML = c.map(i =>
