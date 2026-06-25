@@ -44,9 +44,9 @@ footer a:hover{color:#fff}
 @media(max-width:700px){.cart-tbl thead{display:none}.cart-tbl td{display:block;padding:.5rem 1rem}.cart-tbl tr{display:block;padding:.5rem 0;border-bottom:1px solid var(--border)}}
 </style></head><body>
 <nav>
-  <a href="index.html" class="logo">La Centrale Des<span> Affaires</span></a>
+  <a href="../index.html" class="logo">La Centrale Des<span> Affaires</span></a>
   <div class="nav-right">
-    <a href="index.html" class="back-link">← Continuer mes achats</a>
+    <a href="../index.html" class="back-link">← Continuer mes achats</a>
   </div>
 </nav>
 <div class="wrap">
@@ -64,7 +64,7 @@ footer a:hover{color:#fff}
     </div>
   </div>
 </div>
-<footer>© La Centrale Des Affaires 2026 — <a href="index.html">Accueil</a> · <a href="mentions-legales.html">Mentions légales</a> · <a href="politique-confidentialite.html">Confidentialité</a></footer>
+<footer>© La Centrale Des Affaires 2026 — <a href="../index.html">Accueil</a> · <a href="mentions-legales.html">Mentions légales</a> · <a href="politique-confidentialite.html">Confidentialité</a></footer>
 <script>
 const KEY = 'lcda_cart';
 window.LCDA = window.LCDA || {};
@@ -79,7 +79,7 @@ function render(){
   const footer = document.getElementById('cart-footer');
   const c = read();
   if(c.length===0){
-    wrap.innerHTML='<div class="empty"><p style="font-size:3rem;margin-bottom:.5rem">🛒</p><h2>Votre panier est vide</h2><p>Ajoutez des produits depuis notre catalogue.</p><a href="index.html#produits" class="btn-primary" style="margin-top:1rem">Voir le catalogue</a></div>';
+    wrap.innerHTML='<div class="empty"><p style="font-size:3rem;margin-bottom:.5rem">🛒</p><h2>Votre panier est vide</h2><p>Ajoutez des produits depuis notre catalogue.</p><a href="../index.html#produits" class="btn-primary" style="margin-top:1rem">Voir le catalogue</a></div>';
     footer.style.display='none'; return;
   }
   let total=0;

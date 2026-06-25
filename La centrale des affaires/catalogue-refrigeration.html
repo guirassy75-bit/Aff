@@ -44,10 +44,10 @@ footer{background:var(--navy);color:#94a3b8;text-align:center;padding:1.5rem;fon
 footer a{color:#94a3b8;text-decoration:none}
 footer a:hover{color:#fff}</style></head><body>
 <nav>
-  <a href="index.html" class="logo">La Centrale Des<span> Affaires</span></a>
+  <a href="../index.html" class="logo">La Centrale Des<span> Affaires</span></a>
   <div class="nav-right">
     <a href="panier.html" style="position:relative;text-decoration:none;color:var(--navy);font-weight:600;display:inline-flex;align-items:center;gap:.4rem;border:1px solid var(--border);padding:.5rem 1rem;border-radius:8px;transition:.2s" onmouseover="this.style.borderColor='#e7cb2f'" onmouseout="this.style.borderColor='var(--border)'">🛒 Panier<span data-cart-count style="display:none;background:#e7cb2f;color:#180595;font-size:.7rem;font-weight:700;min-width:18px;height:18px;border-radius:9px;align-items:center;justify-content:center;padding:0 5px">0</span></a>
-    <a href="index.html" class="back-link">← Accueil</a>
+    <a href="../index.html" class="back-link">← Accueil</a>
   </div>
 </nav>
 <section class="hero">
@@ -55,7 +55,7 @@ footer a:hover{color:#fff}</style></head><body>
   <h1>Réfrigération</h1>
   <p>Réfrigérateurs, congélateurs et combinés — toutes les capacités.</p>
 </section>
-<div class="crumbs"><a href="index.html">Accueil</a> › <a href="index.html#produits">Catalogue</a> › <strong>Réfrigération</strong></div>
+<div class="crumbs"><a href="../index.html">Accueil</a> › <a href="../index.html#produits">Catalogue</a> › <strong>Réfrigération</strong></div>
 <div class="grid-wrap"><div class="grid">
     <article class="card">
       <div class="card-img">❄️</div>
@@ -126,13 +126,13 @@ footer a:hover{color:#fff}</style></head><body>
 <section class="cta-bar">
   <h2>Une question sur un produit ?</h2>
   <p>Notre équipe vous renseigne en magasin ou par téléphone au 01 43 79 22 35.</p>
-  <a href="index.html#contact" class="cta-btn">Nous contacter</a>
+  <a href="../index.html#contact" class="cta-btn">Nous contacter</a>
 </section>
 <section class="others">
   <h3>Autres catégories</h3>
   <div class="oc-grid"><a href="catalogue-cuisson.html" class="oc"><span>🍳</span>Cuisson</a><a href="catalogue-lavage-sechage.html" class="oc"><span>🧺</span>Lavage & Séchage</a><a href="catalogue-tv-hifi.html" class="oc"><span>📺</span>TV & Hi-Fi</a><a href="catalogue-literie.html" class="oc"><span>🛏️</span>Literie</a><a href="catalogue-aspirateurs.html" class="oc"><span>🧹</span>Aspirateurs</a><a href="catalogue-petit-menager.html" class="oc"><span>☕</span>Petit Ménager</a><a href="catalogue-mobilier.html" class="oc"><span>🪑</span>Mobilier</a></div>
 </section>
-<footer>© La Centrale Des Affaires 2026 — <a href="index.html">Accueil</a> · <a href="mentions-legales.html">Mentions légales</a> · <a href="politique-confidentialite.html">Confidentialité</a> · <a href="politique-cookies.html">Cookies</a></footer>
+<footer>© La Centrale Des Affaires 2026 — <a href="../index.html">Accueil</a> · <a href="mentions-legales.html">Mentions légales</a> · <a href="politique-confidentialite.html">Confidentialité</a> · <a href="politique-cookies.html">Cookies</a></footer>
 
 <script>
 (function(){
@@ -182,7 +182,7 @@ footer a:hover{color:#fff}</style></head><body>
     if(!wrap) return;
     const c = read();
     if(c.length===0){
-      wrap.innerHTML='<div class="empty"><p style="font-size:3rem;margin-bottom:.5rem">🛒</p><h2>Votre panier est vide</h2><p style="color:#6b7280;margin:.5rem 0 1.5rem">Découvrez nos produits.</p><a href="index.html#produits" class="btn-primary">Voir le catalogue</a></div>';
+      wrap.innerHTML='<div class="empty"><p style="font-size:3rem;margin-bottom:.5rem">🛒</p><h2>Votre panier est vide</h2><p style="color:#6b7280;margin:.5rem 0 1.5rem">Découvrez nos produits.</p><a href="../index.html#produits" class="btn-primary">Voir le catalogue</a></div>';
       document.getElementById('cart-footer').style.display='none';
       return;
     }
