@@ -425,37 +425,6 @@
     }
     .socials a:hover { background: rgba(255,255,255,.18); }
 
-
-    /* ── PANIER NAVBAR ── */
-    .nav-cart-link {
-      position: relative;
-      text-decoration: none;
-      color: var(--navy);
-      font-weight: 600;
-      font-size: .92rem;
-      display: inline-flex;
-      align-items: center;
-      gap: .4rem;
-      border: 1px solid var(--border);
-      padding: .5rem 1rem;
-      border-radius: var(--radius);
-      transition: border-color .2s, color .2s;
-    }
-    .nav-cart-link:hover { border-color: var(--accent); color: var(--accent); }
-    [data-cart-count] {
-      display: none;
-      background: var(--accent);
-      color: var(--navy);
-      font-size: .7rem;
-      font-weight: 700;
-      min-width: 18px;
-      height: 18px;
-      border-radius: 9px;
-      align-items: center;
-      justify-content: center;
-      padding: 0 4px;
-    }
-
     /* ── BACK TO TOP ── */
     .back-top {
       position: fixed; bottom: 1.8rem; right: 1.8rem; z-index: 99;
@@ -569,7 +538,6 @@
       <li><a href="mentions-legales.html">Mentions légales</a></li>
       <li><a href="#contact" class="nav-cta">Contactez-nous</a></li>
     </ul>
-    <a href="panier.html" class="nav-cart-link" aria-label="Panier">🛒 Panier <span data-cart-count>0</span></a>
     <button class="hamburger" id="hamburger" aria-label="Menu">
       <span></span><span></span><span></span>
     </button>
@@ -580,7 +548,7 @@
     <div class="hero-content">
       <span class="hero-badge">✦ Déstockage &amp; Prix Bas</span>
       <h1>L'électroménager de <em>grandes marques</em>, au meilleurs prix</h1>
-      <p>Depuis en électroménager, literie, TV — avec des prix imbattables et un service expert.</p>
+      <p>Depuis 1994, spécialistes de l'électroménager, literie et TV — avec des prix imbattables et un service expert.</p>
       <div class="hero-btns">
         <a href="#produits" class="btn-primary">Voir nos produits →</a>
         <a href="#nos-magasins" class="btn-outline">Trouvez nos magasins</a>
@@ -634,9 +602,7 @@
         </div>
       </div>
       <div class="about-img">
-        <div class="about-img-placeholder"></div>
-        <img src="Capture dcran 2026-06-04 170859.png"
-         alt="Notre magasin" style="width:100%;height:100%;object-fit:cover;">
+        <img src="magasin.png" alt="La Centrale Des Affaires — Notre magasin" style="width:100%;height:100%;object-fit:cover;border-radius:12px;"/>
 
       </div>
     </div>
@@ -655,6 +621,8 @@
         <a href="catalogue-tv-hifi.html" class="cat-card"><div class="cat-icon">📺</div><div class="cat-name">TV &amp; Hi-Fi</div></a>
         <a href="catalogue-literie.html" class="cat-card"><div class="cat-icon">🛏️</div><div class="cat-name">Literie</div></a>
         <a href="catalogue-aspirateurs.html" class="cat-card"><div class="cat-icon">🧹</div><div class="cat-name">Aspirateurs</div></a>
+        <a href="catalogue-petit-menager.html" class="cat-card"><div class="cat-icon">☕</div><div class="cat-name">Petit ménager</div></a>
+        <a href="catalogue-mobilier.html" class="cat-card"><div class="cat-icon">🪑</div><div class="cat-name">Mobilier</div></a>
       </div>
     </div>
   </section>
@@ -760,7 +728,7 @@
     <div class="footer-grid">
       <div>
         <div class="footer-logo">LaCentraleDes<span>Affaires.com</span></div>
-        <p class="footer-desc">Spécialistes de l'électroménager, nos magasins vous proposent aussi petit ménager, gros électroménager, TV &amp; literie — depuis .</p>
+        <p class="footer-desc">Spécialistes de l'électroménager, nos magasins vous proposent aussi petit ménager, gros électroménager, TV &amp; literie — depuis 1994.</p>
         <div class="socials" style="margin-top:1.2rem;">
           <a href="#" title="Facebook">f</a>
           <a href="#" title="Instagram">ig</a>
@@ -781,7 +749,6 @@
         <h4>Légal</h4>
           <li><a href="politique-cookies.html">Cookies</a> </li>
           <li><a href="politique-confidentialite.html">Confidentialité</a></li>
-          <li><a href="cgv.html">Conditions générales de vente</a></li>
         </ul>
       </div>
       <div class="footer-col">
@@ -793,7 +760,7 @@
     </div>
     <div class="footer-bottom">
       <span>© LaCentraleDesAffaires 2026. Tous droits réservés.</span>
-      <span><a href="mentions-legales.html">Mentions légales</a> · ité</a><a href="politique-cookies.html">Cookies</a> · <a href="politique-confidentialite.html">Confidential</span>
+      <span><a href="mentions-legales.html">Mentions légales</a> · <a href="cgv.html">CGV</a> · <a href="politique-cookies.html">Cookies</a> · <a href="politique-confidentialite.html">Confidentialité</a></span>
     </div>
   </footer>
 
@@ -837,46 +804,6 @@
         banner.classList.add('hidden');
       });
     })();
-
-    // ── Panier ──
-    (function(){
-      const KEY = 'lcda_cart';
-      window.LCDA = window.LCDA || {};
-      function read(){ try{ return JSON.parse(localStorage.getItem(KEY)||'[]') }catch(e){ return [] } }
-      function write(c){ localStorage.setItem(KEY, JSON.stringify(c)); updateBadge(); }
-      function updateBadge(){
-        const n = read().reduce((s,i) => s + i.qty, 0);
-        document.querySelectorAll('[data-cart-count]').forEach(el => {
-          el.textContent = n;
-          el.style.display = n > 0 ? 'inline-flex' : 'none';
-        });
-      }
-      LCDA.add = function(p){
-        const c = read();
-        const ex = c.find(i => i.id === p.id);
-        if(ex) ex.qty++; else c.push({...p, qty:1});
-        write(c);
-        showToast('✓ Ajouté au panier : ' + p.name);
-      };
-      LCDA.remove = function(id){ write(read().filter(i => i.id !== id)); };
-      LCDA.read = read;
-      LCDA.clear = function(){ write([]); };
-      function showToast(msg){
-        let t = document.getElementById('lcda-toast');
-        if(!t){
-          t = document.createElement('div');
-          t.id = 'lcda-toast';
-          t.style.cssText = 'position:fixed;bottom:80px;left:50%;transform:translateX(-50%);background:#180595;color:#fff;padding:.8rem 1.4rem;border-radius:8px;font-family:Inter,sans-serif;font-size:.9rem;font-weight:600;box-shadow:0 8px 24px rgba(0,0,0,.2);z-index:9999;opacity:0;transition:opacity .25s;white-space:nowrap';
-          document.body.appendChild(t);
-        }
-        t.textContent = msg;
-        t.style.opacity = '1';
-        clearTimeout(t._h);
-        t._h = setTimeout(() => { t.style.opacity = '0'; }, 2200);
-      }
-      document.addEventListener('DOMContentLoaded', updateBadge);
-    })();
-
   </script>
 </body>
 </html>
